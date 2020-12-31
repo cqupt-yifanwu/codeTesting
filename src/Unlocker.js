@@ -16,7 +16,7 @@ export default class Unlocker {
 
     // 开始暴力破解宝箱
     bruteForce () {
-        let i = 1000
+        let i = 0
         let tempHash = '' // 记录宝箱临时hash
         while (tempHash.slice(0, 5) !== '00000') {
             tempHash = this.treasurechest.createHash(i)

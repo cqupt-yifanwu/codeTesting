@@ -16,8 +16,6 @@ unlockerFactory.startMachine()
 
 const keyList = unlockerFactory.getKeyList()
 
-console.log('keyList' + keyList)
-
 // describe：定义一组测试
 describe("开锁工厂测试", function() {
     // it: 定义一个测试用例
