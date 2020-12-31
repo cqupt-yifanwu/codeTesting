@@ -1,15 +1,14 @@
-import Treasurechest from '../src/Treasurechest'
+import TreasureFactory from '../src/TreasureFactory'
 import Unlocker from '../src/Unlocker'
 import UnlockerFactory from '../src/UnlockerFactory'
 
-// 十个宝箱列表
-const treasurechestList = []
-for (let i = 1; i <= 10; i++) {
-    treasurechestList.push(new Treasurechest(i))
-}
+const treasureFactory = new TreasureFactory()
+treasureFactory.porductTreasurechest(10)
 
-const unlockerFactory = new UnlockerFactory(treasurechestList, new Unlocker())
+const unlockerFactory = new UnlockerFactory(treasureFactory.getTreasurechestList(), new Unlocker())
 
 unlockerFactory.startMachine()
 
 console.log(unlockerFactory.getKeyList())
+
+document.body.innerHTML = "1到10号宝箱的神秘数字依次是" + unlockerFactory.getKeyList()
