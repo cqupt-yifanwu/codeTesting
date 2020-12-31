@@ -26,7 +26,7 @@ export default class Unlocker {
         this._setTreasurechestHash(tempHash)
 
         return {
-            mysteriousNumber: i,
+            mysteriousNumber: i - 1,
             hash: tempHash
         }
     }
