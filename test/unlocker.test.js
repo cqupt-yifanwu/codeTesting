@@ -18,6 +18,7 @@ describe("开锁测试", function () {
     });
 
     it("开锁完成后hash值前五位应该是 00000", function () {
+        console.log(mysteriousNumber)
         expect(hash.slice(0, 5)).to.be.equal("00000")
     })
 })

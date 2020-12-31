@@ -1,9 +1,15 @@
-import Treasurechest from './Treasurechest'
-import Unlocker from './Unlocker'
+import Treasurechest from '../src/Treasurechest'
+import Unlocker from '../src/Unlocker'
+import UnlockerFactory from '../src/UnlockerFactory'
 
-// 一号宝箱
-const treasurechest_1 = new Treasurechest(1, 0)
+// 十个宝箱列表
+const treasurechestList = []
+for (let i = 1; i <= 10; i++) {
+    treasurechestList.push(new Treasurechest(i))
+}
 
-const unlocker = new Unlocker(treasurechest_1)
+const unlockerFactory = new UnlockerFactory(treasurechestList, new Unlocker())
 
-unlocker.bruteForce()
+unlockerFactory.startMachine()
+
+console.log(unlockerFactory.getKeyList())
