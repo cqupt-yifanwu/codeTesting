@@ -1,3 +1,8 @@
+
+# 项目所需环境
+- npm
+- node
+
 # 1. npm install
 
 # 2. 单元测试命令
