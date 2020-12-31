@@ -5,7 +5,7 @@ const assert = require("assert");
 const treasurechest_1 = new Treasurechest(1, 0)
 
 // describe：定义一组测试
-describe("加法函数测试", function() {
+describe("宝箱构造函数测试", function() {
     before(function() {
         // runs before all tests in this block
     });
@@ -19,3 +19,4 @@ describe("加法函数测试", function() {
         // runs after all test in this block
     });
 });
+
