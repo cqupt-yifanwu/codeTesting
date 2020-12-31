@@ -6,10 +6,17 @@ export default class TreasureFactory {
         this.treasurechestList = []
     }
 
-    // 生产宝箱
+    /**
+     * 生产宝箱
+     * @param {*} number // 生产多少个
+     */
     porductTreasurechest(number) {
         for (let i = 1; i <= number; i++) {
             this.treasurechestList.push(new Treasurechest(i))
         }
+    }
+
+    getTreasurechestList () {
+        return this.treasurechestList
     }
 }
