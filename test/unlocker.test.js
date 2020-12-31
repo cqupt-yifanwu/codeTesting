@@ -3,10 +3,12 @@ import Unlocker from '../src/Unlocker'
 const expect = require('chai').expect
 
 // 一号宝箱
-const treasurechest_1 = new Treasurechest(1, 0)
+const treasurechest_1 = new Treasurechest(1)
+treasurechest_1.setPreHash(0)
 
 describe("开锁测试", function () {
-    const unlocker = new Unlocker(treasurechest_1)
+    const unlocker = new Unlocker()
+    unlocker.installation(treasurechest_1)
     console.log(new Date())
     const {mysteriousNumber, hash} = unlocker.bruteForce()
     console.log(new Date())

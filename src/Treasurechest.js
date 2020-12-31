@@ -1,16 +1,22 @@
 import { sha256 } from 'js-sha256'
 
 export default class Treasurechest {
-    constructor (index, preHash) {
+    constructor (index) {
         this.index = index // 宝箱编号
-        this.timing = new Date().getTime() // 打开宝箱的时间戳
         this.status = 'close' // 宝箱是否被打开
         this.hash = '' // 宝箱的hash值
-        this.preHash = preHash // 上一个被打开的宝箱hash值
-        this.tempHash = '' // 每次被尝试开锁都会存入这个临时hash
+        this.preHash = ''// 上一个博爱俺的hash
     }
 
-    getPreHash() {
+    /**
+     * 
+     * @param {string} preHash // 上一个宝箱的hash
+     */
+    setPreHash(preHash) {
+        this.preHash = preHash
+    }
+
+    getPreHash () {
         return this.preHash
     }
 
@@ -18,8 +24,18 @@ export default class Treasurechest {
         return this.hash
     }
 
+    setHash(hash) {
+        this.hash = hash
+    }
+
+    /**
+     * 
+     * @param {number} mysteriousNumber // 神秘数字
+     */
     createHash (mysteriousNumber) {
-        this.tempHash = sha256(this.index + this.timing + this.preHash + mysteriousNumber + '')
-        return this.tempHash
+        if (this.preHash === '') {
+            console.log('您还没有填入上一个宝箱的hash')
+        }
+        return sha256(this.index + this.preHash + mysteriousNumber + '')
     }
 }
