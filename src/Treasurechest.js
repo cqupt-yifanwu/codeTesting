@@ -36,6 +36,6 @@ export default class Treasurechest {
         if (this.preHash === '') {
             console.log('您还没有填入上一个宝箱的hash')
         }
-        return sha256(this.index + this.preHash + mysteriousNumber + '')
+        return sha256(this.index + '' + this.preHash + '' + mysteriousNumber + '')
     }
 }
